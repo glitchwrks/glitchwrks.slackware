@@ -1,0 +1,24 @@
+ancestor: null
+releases:
+  0.1.0:
+    changes:
+      release_summary: Initial release. Dependency-resolving package installs from
+        repositories that publish ``PACKAGE REQUIRED:`` metadata, such as those built
+        by slackrepo, and rc.d service management. The plugins were previously maintained
+        internally at Glitch Works, LLC.
+    fragments:
+    - 0.1.0.yml
+    modules:
+    - description: Install Slackware packages with dependencies resolved from repository
+        metadata.
+      name: slackpkg
+      namespace: ''
+    - description: Manage Slackware services controlled by /etc/rc.d scripts.
+      name: slackware_service
+      namespace: ''
+    plugins:
+      lookup:
+      - description: Expand Slackware packages to their full dependency set.
+        name: slackdeps
+        namespace: null
+    release_date: '2026-10-27'
