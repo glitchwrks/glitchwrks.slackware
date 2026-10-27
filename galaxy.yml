@@ -1,0 +1,28 @@
+namespace: glitchwrks
+name: slackware
+version: 0.1.0
+readme: README.md
+authors:
+  - Jonathan Chapman <glitch@glitchwrks.com>
+description: >-
+  Slackware Linux support for Ansible: dependency-resolving package installs from
+  slackrepo-built repositories and rc.d service management. Maintained by Glitch Works, LLC.
+license:
+  - GPL-3.0-or-later
+tags:
+  - slackware
+  - linux
+  - packaging
+  - system
+dependencies:
+  community.general: ">=1.0.0"
+repository: https://github.com/glitchwrks/glitchwrks.slackware
+documentation: https://github.com/glitchwrks/glitchwrks.slackware
+homepage: https://github.com/glitchwrks/glitchwrks.slackware
+issues: https://github.com/glitchwrks/glitchwrks.slackware/issues
+build_ignore:
+  - .github
+  - .gitignore
+  - tests/output
+  - changelogs/.plugin-cache.yaml
+  - '*.tar.gz'
