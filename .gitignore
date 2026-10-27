@@ -29,3 +29,6 @@ venv/
 
 # antsibull-changelog plugin cache
 changelogs/.plugin-cache.yaml
+
+# Release builds
+/dist/

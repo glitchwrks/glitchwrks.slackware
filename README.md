@@ -161,6 +161,31 @@ Issues and pull requests are welcome. For changes that affect users, add a chang
 under `changelogs/fragments/`; see the
 [antsibull-changelog documentation](https://ansible.readthedocs.io/projects/antsibull-changelog/changelogs/).
 
+## Releasing
+
+Releases are published to Ansible Galaxy by the `release` workflow when a version tag is pushed.
+
+1. Make sure every user-facing change since the last release has a fragment in
+   `changelogs/fragments/`.
+2. Set the new version in `galaxy.yml`, following [semantic versioning](https://semver.org/).
+3. Generate the release notes, which updates `CHANGELOG.md` and removes the fragments:
+   ```sh
+   antsibull-changelog release
+   ```
+4. Commit, and merge to `master` once CI passes.
+5. Tag the merged commit with the version, without a `v` prefix, and push the tag:
+   ```sh
+   git tag 0.2.0
+   git push origin 0.2.0
+   ```
+
+The workflow checks that the tag matches `galaxy.yml`, builds the collection, publishes it to
+Galaxy and creates a GitHub release with the built archive attached. Publishing needs a Galaxy API
+token for the `glitchwrks` namespace, stored as the `GALAXY_API_KEY` repository secret.
+
+A version can only be published to Galaxy once. If a release goes wrong, fix it and release the
+next patch version.
+
 ## License
 
 GNU General Public License v3.0 or later. See [LICENSE](LICENSE).

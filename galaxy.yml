@@ -26,3 +26,4 @@ build_ignore:
   - tests/output
   - changelogs/.plugin-cache.yaml
   - '*.tar.gz'
+  - dist
